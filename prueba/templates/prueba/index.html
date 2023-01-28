@@ -1,7 +1,21 @@
 {% load static %}
-<html>
-<head></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
 <body>
-<p>Hola!</p>
+    <h1>Registro</h1>
+    <form id="miFormulario" method="post">
+        {% csrf_token %}
+        <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+        <input id="apellidos" name="apellidos" type="text" placeholder="Apellidos">
+        <input type="button" id="boton" value="Registrar">
+    </form>
+    <input type="button" id="muestra" value="Lista de personas registradas">
+<script src="{% static 'js/prueba.js' %}"></script>
 </body>
 </html>
