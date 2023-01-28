@@ -44,7 +44,9 @@ $(document).ready(function () {
             type: "GET",
             dataType: "json",
             success: (data) => {
-              console.log(data);
+                for(let i of data.context){
+                    $("body").append("<p> Nombre: " + i.nombre + ", apellidos: " +i.apellidos + "</p>")
+                }
             },
             error: (error) => {
               console.log(error);
