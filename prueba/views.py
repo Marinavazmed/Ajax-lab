@@ -24,9 +24,19 @@ def registro(request):
 def noticias(request):
     if(request.headers.get('X-Requested-With') == 'XMLHttpRequest'):
         if request.method == 'GET':
-            noticias = [
-                {'titular': "Noticia 1",'resumen': "Resumen de la noticia 1",'descripcion': "Esta es la noticia 1"},
-                {'titular': "Noticia 2",'resumen': "Resumen de la noticia 2",'descripcion': "Esta es la noticia 2"},
-                {'titular': "Noticia 3",'resumen': "Resumen de la noticia 3",'descripcion': "Esta es la noticia 3"}];
+            filtro = request.GET.get('filtro')
+            print(filtro)
+            if(filtro):
+                noticias=[
+                    {'titular': "Noticia 1", 'resumen': "Resumen de la noticia 1",
+                     'descripcion': "Esta es la noticia 1"}
+                ]
+            else:
+
+                noticias = [
+                    {'titular': "Noticia 1",'resumen': "Resumen de la noticia 1",'descripcion': "Esta es la noticia 1"},
+                    {'titular': "Noticia 2",'resumen': "Resumen de la noticia 2",'descripcion': "Esta es la noticia 2"},
+                    {'titular': "Noticia 3",'resumen': "Resumen de la noticia 3",'descripcion': "Esta es la noticia 3"}];
+
             return JsonResponse({'context':noticias})
     return render(request, 'prueba/noticias.html', {})
