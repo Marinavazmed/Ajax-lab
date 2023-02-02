@@ -17,3 +17,16 @@ def prueba_clase(request):
                 {'titular': "Noticia 3",'resumen': "Resumen de la noticia 3",'descripcion': "Esta es la noticia 3"}];
             return JsonResponse({'context':noticias})
     return render(request, 'prueba/noticias.html', {})
+
+
+def examen(request):
+    if(request.headers.get('X-Requested-With') == 'XMLHttpRequest'):
+        if request.method == 'GET':
+            j_son = [
+                {'src': "/img/img1.jpg",'desc': "descripción1",'specs': ["spec11", "spec12"]},
+                {'src': "/img/img2.jpg", 'desc': "descripción2", 'specs': ["spec21", "spec22"]},
+                {'src': "/img/img3.jpg", 'desc': "descripción3", 'specs': ["spec31", "spec32"]},
+
+            ];
+            return JsonResponse({'j_son': j_son})
+    return render(request, 'prueba/examen.html', {})
