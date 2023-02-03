@@ -28,7 +28,7 @@ def prueba(request):
 				'detalle_precio_total': "1,899",
 				'detalle_num_noches' : 7,
 				'precio_noche' : 275,
-				'ruta_imagen' : "static/imagenes/newyork.jpg",
+				'ruta_imagen' : "/static/imagenes/newyork.jpg",
 				'pie_imagen' : "Puente de Brooklyn"},
 
                 {'clase_pais': "paris",
@@ -36,7 +36,7 @@ def prueba(request):
                  'detalle_precio_total': "1,499",
                  'detalle_num_noches': 5,
                  'precio_noche': 300,
-                 'ruta_imagen': "static/imagenes/paris.jpg",
+                 'ruta_imagen': "/static/imagenes/paris.jpg",
                  'pie_imagen': "Notre Dame de Paris"},
 
                 {'clase_pais': "uk",
@@ -44,7 +44,7 @@ def prueba(request):
                  'detalle_precio_total': "2,199",
                  'detalle_num_noches': 5,
                  'precio_noche': 440,
-                 'ruta_imagen': "static/imagenes/london.jpg",
+                 'ruta_imagen': "/static/imagenes/london.jpg",
                  'pie_imagen': "Torre de Londres"}
 
 
